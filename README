@@ -1,0 +1,13 @@
+Here is a brief description of each program:
+
+Lifeinsurance1.java
+This program is a Monte Carlo simulation of the Life Settlement portfolio of Imperial Holdings.  Basically Imperial Holdings buys life insurance policies from people and pays the premiums.  When the person dies Imperial collects the profit.  Part of the due diligence on this company was writing a Monte Carlo Simulator of the company's policies that it owned in order to come up with a discounted cash flow that the company would receive
+
+Options Arbitrage.R
+This program uses the quantmod library to look for opportunities where there is options arbitrage.  I didn't want to delta hedge because that requires updating position sizing frequently.  Rather I wanted to look for arbitrage opportunities that didn't require delta hedging.  Thus the program creates and artificial futures contract with options going either long calls and short puts at the same strike or vice versa.  The program then also goes long or short the stock depending on if it went long or short the future (it would obviously take the opposite position with the stock as with the synthetic future).  If there was opportunities for arbitrage the computer would alert me
+
+Quandlscript.M and Commoditycorrel.m
+These two programs are really two in one.  The Quandl script program downloads the data through Quandl (my free data feed) and downloads a list of stocks (from the excel document being referred).  The commoditycorrel.m program then just goes through the list of stocks and looks for correlations with a data series.  You can run commodity correlations or cross stock correlations much like doing statistical arbitrage.  
+
+Lifemodel5.m
+The main part of this program was written by my professor George Hall.  It uses dynamic programming to solve an asset allocation problem.  I modified the code to make it run for a beta delta discounter (ie quasi-hyperbolic discounter).  This type of discounting is less rational (basically the utility of anything that doesn't happen to you right now gets discounted by a factor a beta in addition to the discount factor delta) but more accurate depiction of human behaviour.  
